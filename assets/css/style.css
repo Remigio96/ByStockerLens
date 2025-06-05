@@ -1,0 +1,27 @@
+    .gallery-img {
+        filter: grayscale(100%);
+        transition: filter 0.5s ease, transform 0.3s ease;
+    }
+
+    .gallery-img:hover {
+        filter: grayscale(0%);
+        transform: scale(1.05);
+    }
+
+    .galeria-item {
+        height: 250px;
+    }
+
+    @media (max-width: 768px) {
+        .sidebar {
+            flex-direction: row !important;
+            height: auto !important;
+            width: 100% !important;
+            position: static !important;
+        }
+
+        .sidebar ul {
+            flex-direction: row !important;
+            gap: 1rem;
+        }
+    }
