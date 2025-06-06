@@ -513,3 +513,7 @@ h1.text-center {
 .sidebar-collapse.open {
     opacity: 1;
 }
+
+.sidebar-collapse:not(.open) {
+  pointer-events: none;
+}

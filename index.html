@@ -232,6 +232,7 @@
             menu.style.transition = "max-height 0.5s ease, opacity 0.4s ease";
             menu.style.maxHeight = "0px";
             menu.style.opacity = "0";
+            menu.style.overflow = "hidden"; // fuerza a cerrar
           });
 
           menu.classList.remove("open");
@@ -239,8 +240,8 @@
           menu.classList.add("open");
           menu.style.opacity = "0";
           menu.style.maxHeight = "0px";
+          menu.style.overflow = "hidden";
 
-          // Dos frames para asegurarse que se registre el estado inicial
           requestAnimationFrame(() => {
             requestAnimationFrame(() => {
               const targetHeight = menu.scrollHeight;
@@ -255,16 +256,21 @@
       menu.addEventListener("transitionend", (e) => {
         if (e.propertyName === "max-height") {
           if (!menu.classList.contains("open")) {
+            // Resetear estilos si está cerrado
             menu.style.maxHeight = "";
             menu.style.opacity = "";
             menu.style.transition = "";
+            menu.style.overflow = "";
           } else {
-            menu.style.maxHeight = "none"; // para que el contenido no se vea cortado
+            // Dejar altura expandida si está abierto
+            menu.style.maxHeight = menu.scrollHeight + "px";
+            menu.style.overflow = "visible";
           }
         }
       });
     });
   </script>
+
 
   <script>
     let lastScrollTop = 0;
