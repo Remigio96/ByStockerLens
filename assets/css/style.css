@@ -144,58 +144,68 @@
     }
 
     .sobre-mi-section-modern {
-    background: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(12px);
-    border-radius: 1.5rem;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation: fadeInUp 0.8s ease both;
-}
-
-.sobre-mi-section-modern:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-}
-
-.img-sobre-mi {
-    width: 150px;
-    height: 150px;
-    transition: transform 0.3s ease;
-}
-
-.img-sobre-mi:hover {
-    transform: rotate(1deg) scale(1.03);
-}
-
-.info-wrapper h2 {
-    font-size: 2rem;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@media (max-width: 767.98px) {
-    .sobre-mi-section-modern {
-        text-align: center;
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(12px);
+        border-radius: 1.5rem;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        animation: fadeInUp 0.8s ease both;
     }
 
-    .img-wrapper {
-        margin-bottom: 1rem;
+    .sobre-mi-section-modern:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
     }
 
-    .info-wrapper {
-        text-align: center;
+    .img-sobre-mi {
+        width: 150px;
+        height: 150px;
+        transition: transform 0.3s ease;
     }
-}
+
+    .img-sobre-mi:hover {
+        transform: rotate(1deg) scale(1.03);
+    }
+
+    .info-wrapper h2 {
+        font-size: 2rem;
+    }
+
+    .galeria-bento {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-auto-rows: 150px;
+        gap: 0.7rem;
+        grid-auto-flow: dense;
+        /* ✅ Esto debe ir aquí */
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @media (max-width: 767.98px) {
+        .sobre-mi-section-modern {
+            text-align: center;
+        }
+
+        .img-wrapper {
+            margin-bottom: 1rem;
+        }
+
+        .info-wrapper {
+            text-align: center;
+        }
+    }
 
 
 
@@ -234,6 +244,16 @@
 
         .img-sobre-mi {
             margin-bottom: 1rem;
+        }
+
+        .galeria-bento {
+            grid-template-columns: repeat(2, 1fr);
+            grid-auto-rows: 140px;
+        }
+
+        .bento-img {
+            grid-column: span 2 !important;
+            grid-row: span 1 !important;
         }
     }
 
@@ -300,5 +320,113 @@
 
         .footer-estilizado .contacto {
             width: 100%;
+        }
+    }
+
+    .bento-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 1rem;
+        filter: grayscale(100%);
+        transition: filter 0.4s ease, transform 0.3s ease;
+        padding: 0.2rem;
+        box-sizing: border-box;
+        will-change: transform, filter;
+    }
+
+
+    .bento-img:hover {
+        filter: grayscale(0%);
+        transform: scale(1.03);
+        z-index: 2;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Layout estilo bento */
+    .img1 {
+        grid-column: span 3;
+        grid-row: span 2;
+    }
+
+    .img2 {
+        grid-column: span 3;
+        grid-row: span 2;
+    }
+
+    .img3 {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    .img4 {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    .img5 {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    .img6 {
+        grid-column: span 3;
+        grid-row: span 1;
+    }
+
+    .img7 {
+        grid-column: span 3;
+        grid-row: span 1;
+    }
+
+    .img8 {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+
+    .img9 {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    .img10 {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    .img11 {
+        grid-column: span 6;
+        grid-row: span 1;
+    }
+
+    .img12 {
+        grid-column: span 3;
+        grid-row: span 2;
+    }
+
+    .img13 {
+        grid-column: span 3;
+        grid-row: span 2;
+    }
+
+    .img14 {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    .img15 {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    @keyframes fadeInGrid {
+        from {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+
+        to {
+            opacity: 1;
+            transform: scale(1);
         }
     }
