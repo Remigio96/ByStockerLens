@@ -23,7 +23,8 @@
 <body class="d-flex flex-column flex-md-row min-vh-100">
 
   <!-- Menú lateral en desktop y superior con toggle en mobile -->
-  <nav class="sidebar bg-personalizado text-white d-flex flex-md-column align-items-start p-4 gap-4 w-100 w-md-auto">
+  <nav id="mainNavbar"
+    class="sidebar bg-personalizado text-white d-flex flex-md-column align-items-start p-4 gap-4 w-100 w-md-auto">
     <!-- Logo + Toggle button en mobile -->
     <div class="d-flex w-100 justify-content-between align-items-center d-md-block">
       <a href="#" class="text-white text-decoration-none d-flex align-items-center gap-2">
@@ -265,10 +266,24 @@
     });
   </script>
 
+  <script>
+    let lastScrollTop = 0;
+    const navbar = document.getElementById("mainNavbar");
 
+    window.addEventListener("scroll", function () {
+      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
+      if (currentScroll > lastScrollTop) {
+        // bajando
+        navbar.classList.add("navbar-hidden");
+      } else {
+        // subiendo
+        navbar.classList.remove("navbar-hidden");
+      }
 
-
+      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    }, false);
+  </script>
 
 </body>
 
