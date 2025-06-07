@@ -64,8 +64,8 @@
         </p>
         <p class="text-justificado fs-5">
           ByStocker nació de esa conexión profunda con lo natural y de una necesidad por compartir belleza, calma y
-          conciencia visual en medio del ruido del mundo moderno. Esta es mi manera de invitarte a detenerte, mirar y
-          sentir.
+          conciencia visual en medio del ruido del mundo moderno. Esta es mi forma de invitarte a que te detengas, mires y
+          sientas.
         </p>
       </div>
     </section>
@@ -208,95 +208,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const toggler = document.getElementById("customToggle");
-      const menu = document.getElementById("sidebarMenu");
-
-      toggler.addEventListener("click", () => {
-        const isOpen = menu.classList.contains("open");
-
-        if (isOpen) {
-          const height = menu.scrollHeight;
-          menu.style.maxHeight = height + "px"; // set current height first
-
-          requestAnimationFrame(() => {
-            menu.style.transition = "max-height 0.5s ease, opacity 0.4s ease";
-            menu.style.maxHeight = "0px";
-            menu.style.opacity = "0";
-            menu.style.overflow = "hidden"; // fuerza a cerrar
-          });
-
-          menu.classList.remove("open");
-        } else {
-          menu.classList.add("open");
-          menu.style.opacity = "0";
-          menu.style.maxHeight = "0px";
-          menu.style.overflow = "hidden";
-
-          requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-              const targetHeight = menu.scrollHeight;
-              menu.style.transition = "max-height 0.7s ease, opacity 0.5s ease";
-              menu.style.maxHeight = targetHeight + "px";
-              menu.style.opacity = "1";
-            });
-          });
-        }
-      });
-
-      document.querySelectorAll('.link-sidebar').forEach(link => {
-        link.addEventListener('click', () => {
-          if (menu.classList.contains("open")) {
-            menu.style.transition = "max-height 0.5s ease, opacity 0.4s ease";
-            menu.style.maxHeight = "0px";
-            menu.style.opacity = "0";
-            menu.style.overflow = "hidden";
-            menu.classList.remove("open");
-          }
-        });
-      });
-
-      menu.addEventListener("transitionend", (e) => {
-        if (e.propertyName === "max-height") {
-          if (!menu.classList.contains("open")) {
-            // Resetear estilos si está cerrado
-            menu.style.maxHeight = "";
-            menu.style.opacity = "";
-            menu.style.transition = "";
-            menu.style.overflow = "";
-          } else {
-            // Dejar altura expandida si está abierto
-            menu.style.maxHeight = menu.scrollHeight + "px";
-            menu.style.overflow = "visible";
-          }
-        }
-      });
-    });
-  </script>
-
-  <script>
-    let lastScrollTop = 0;
-    const navbar = document.getElementById("mainNavbar");
-    const scrollThreshold = 60;
-
-    window.addEventListener("scroll", function () {
-      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-      const scrollDiff = currentScroll - lastScrollTop;
-
-      if (scrollDiff > scrollThreshold) {
-        // Bajando rápidamente
-        navbar.classList.add("navbar-hidden");
-        lastScrollTop = currentScroll;
-      } else if (scrollDiff < -scrollThreshold) {
-        // Subiendo rápidamente
-        navbar.classList.remove("navbar-hidden");
-        lastScrollTop = currentScroll;
-      }
-    }, false);
-
-  </script>
-
+  <script src="./assets/js/main.js"></script>
 </body>
 
 </html>

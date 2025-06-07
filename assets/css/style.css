@@ -1,21 +1,3 @@
-.gallery-img {
-    filter: grayscale(100%);
-    transition: filter 0.5s ease, transform 0.3s ease;
-}
-
-.gallery-img:hover {
-    filter: grayscale(0%);
-    transform: scale(1.05);
-}
-
-.galeria-item {
-    height: 250px;
-}
-
-.bg-personalizado {
-    background-color: #37553c;
-}
-
 body {
     position: relative;
     background-color: #d1d3ca;
@@ -41,6 +23,47 @@ body>* {
     z-index: 1;
 }
 
+h1.text-center {
+    font-family: 'Croissant One', serif;
+}
+
+.sidebar,
+.sidebar-collapse,
+.sidebar ul,
+.sidebar ul li {
+    overflow: visible !important;
+}
+
+.redes-sociales a {
+    display: inline-block;
+}
+
+.footer-estilizado .redes h5 {
+    margin-bottom: 0.75rem;
+}
+
+.info-wrapper h2 {
+    font-size: 2rem;
+}
+
+.gallery-img {
+    filter: grayscale(100%);
+    transition: filter 0.5s ease, transform 0.3s ease;
+}
+
+.gallery-img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+.galeria-item {
+    height: 250px;
+}
+
+.bg-personalizado {
+    background-color: #37553c;
+}
+
 .footer-estilizado {
     background-color: #37553c;
     border-radius: 1rem;
@@ -57,10 +80,6 @@ body>* {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-h1.text-center {
-    font-family: 'Croissant One', serif;
-}
-
 .icono {
     width: 40px;
     height: 40px;
@@ -72,10 +91,6 @@ h1.text-center {
 .icono:hover {
     filter: grayscale(0%);
     transform: translateY(-6px);
-}
-
-.redes-sociales a {
-    display: inline-block;
 }
 
 .redes-sociales {
@@ -97,13 +112,6 @@ h1.text-center {
     text-align: center;
     text-decoration: none;
     transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.sidebar,
-.sidebar-collapse,
-.sidebar ul,
-.sidebar ul li {
-    overflow: visible !important;
 }
 
 .link-sidebar:hover {
@@ -128,10 +136,6 @@ h1.text-center {
 
 .text-justificado {
     text-align: justify;
-}
-
-.footer-estilizado .redes h5 {
-    margin-bottom: 0.75rem;
 }
 
 .footer-estilizado .redes {
@@ -175,16 +179,76 @@ h1.text-center {
     transform: rotate(1deg) scale(1.03);
 }
 
-.info-wrapper h2 {
-    font-size: 2rem;
-}
-
 .galeria-bento {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 0.7rem;
     grid-auto-flow: dense;
     /* ✅ Esto debe ir aquí */
+}
+
+.bento-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+    filter: grayscale(100%);
+    transition: filter 0.4s ease, transform 0.3s ease;
+    padding: 0.2rem;
+    box-sizing: border-box;
+    will-change: transform, filter;
+}
+
+.bento-img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.03);
+    z-index: 2;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.img1,
+.img2,
+.img12,
+.img13 {
+  grid-column: span 3;
+  grid-row: span 2;
+}
+
+.img3,
+.img4,
+.img5,
+.img9,
+.img10,
+.img14,
+.img15 {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+.img6,
+.img7 {
+  grid-column: span 3;
+  grid-row: span 1;
+}
+
+.img8 {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.img11 {
+  grid-column: span 6;
+  grid-row: span 1;
+}
+
+.sidebar-collapse {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+}
+
+.sidebar-collapse.open {
+    opacity: 1;
 }
 
 @keyframes fadeInUp {
@@ -196,6 +260,18 @@ h1.text-center {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes fadeInGrid {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
     }
 }
 
@@ -377,6 +453,16 @@ h1.text-center {
   }
 }
 
+@media (max-width: 1150px) {
+    #acerca-form-wrapper {
+        flex-direction: column !important;
+    }
+
+    #acerca,
+    #formulario {
+        width: 100% !important;
+    }
+}
 
 @media (max-width: 576px) {
 
@@ -393,131 +479,4 @@ h1.text-center {
     .footer-estilizado .contacto {
         width: 100%;
     }
-}
-
-.bento-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 1rem;
-    filter: grayscale(100%);
-    transition: filter 0.4s ease, transform 0.3s ease;
-    padding: 0.2rem;
-    box-sizing: border-box;
-    will-change: transform, filter;
-}
-
-.bento-img:hover {
-    filter: grayscale(0%);
-    transform: scale(1.03);
-    z-index: 2;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
-}
-
-.img1 {
-    grid-column: span 3;
-    grid-row: span 2;
-}
-
-.img2 {
-    grid-column: span 3;
-    grid-row: span 2;
-}
-
-.img3 {
-    grid-column: span 2;
-    grid-row: span 1;
-}
-
-.img4 {
-    grid-column: span 2;
-    grid-row: span 1;
-}
-
-.img5 {
-    grid-column: span 2;
-    grid-row: span 1;
-}
-
-.img6 {
-    grid-column: span 3;
-    grid-row: span 1;
-}
-
-.img7 {
-    grid-column: span 3;
-    grid-row: span 1;
-}
-
-.img8 {
-    grid-column: span 2;
-    grid-row: span 2;
-}
-
-.img9 {
-    grid-column: span 2;
-    grid-row: span 1;
-}
-
-.img10 {
-    grid-column: span 2;
-    grid-row: span 1;
-}
-
-.img11 {
-    grid-column: span 6;
-    grid-row: span 1;
-}
-
-.img12 {
-    grid-column: span 3;
-    grid-row: span 2;
-}
-
-.img13 {
-    grid-column: span 3;
-    grid-row: span 2;
-}
-
-.img14 {
-    grid-column: span 2;
-    grid-row: span 1;
-}
-
-.img15 {
-    grid-column: span 2;
-    grid-row: span 1;
-}
-
-@keyframes fadeInGrid {
-    from {
-        opacity: 0;
-        transform: scale(0.95);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-@media (max-width: 1150px) {
-    #acerca-form-wrapper {
-        flex-direction: column !important;
-    }
-
-    #acerca,
-    #formulario {
-        width: 100% !important;
-    }
-}
-
-.sidebar-collapse {
-    overflow: hidden;
-    max-height: 0;
-    opacity: 0;
-}
-
-.sidebar-collapse.open {
-    opacity: 1;
 }
