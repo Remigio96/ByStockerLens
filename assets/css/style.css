@@ -309,7 +309,9 @@ h1.text-center {
         transition: opacity 0.4s ease 0.3s;
     }
 
-
+    .sidebar-collapse:not(.open) {
+        pointer-events: none;
+    }
 }
 
 
@@ -512,8 +514,4 @@ h1.text-center {
 
 .sidebar-collapse.open {
     opacity: 1;
-}
-
-.sidebar-collapse:not(.open) {
-  pointer-events: none;
 }

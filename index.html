@@ -253,6 +253,18 @@
         }
       });
 
+      document.querySelectorAll('.link-sidebar').forEach(link => {
+        link.addEventListener('click', () => {
+          if (menu.classList.contains("open")) {
+            menu.style.transition = "max-height 0.5s ease, opacity 0.4s ease";
+            menu.style.maxHeight = "0px";
+            menu.style.opacity = "0";
+            menu.style.overflow = "hidden";
+            menu.classList.remove("open");
+          }
+        });
+      });
+
       menu.addEventListener("transitionend", (e) => {
         if (e.propertyName === "max-height") {
           if (!menu.classList.contains("open")) {
@@ -275,22 +287,24 @@
   <script>
     let lastScrollTop = 0;
     const navbar = document.getElementById("mainNavbar");
+    const scrollThreshold = 60;
 
     window.addEventListener("scroll", function () {
       const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+      const scrollDiff = currentScroll - lastScrollTop;
 
-      if (currentScroll > lastScrollTop) {
-        // bajando
+      if (scrollDiff > scrollThreshold) {
+        // Bajando rápidamente
         navbar.classList.add("navbar-hidden");
-      } else {
-        // subiendo
+        lastScrollTop = currentScroll;
+      } else if (scrollDiff < -scrollThreshold) {
+        // Subiendo rápidamente
         navbar.classList.remove("navbar-hidden");
+        lastScrollTop = currentScroll;
       }
-
-      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
     }, false);
-  </script>
 
+  </script>
 </body>
 
 </html>
