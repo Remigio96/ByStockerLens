@@ -24,6 +24,11 @@
 * Integración Open Graph para compartir en redes
 * Menú desplegable adaptable a escritorio y móvil
 
+
+## 📺 Layout
+
+https://github.com/user-attachments/assets/70e11e12-065b-4562-b4ba-599885cbe130
+
 ## 📝 Estructura del Proyecto
 
 ```
