@@ -1,3 +1,7 @@
+![image](https://github.com/user-attachments/assets/803ebe86-b02b-45f2-b830-73ce6f5a7c18)
+
+
+
 # ByStockerLens
 
 **ByStockerLens** es un portafolio web moderno diseñado para presentar un trabajo fotográfico hipotético, enfocado en capturar la emoción de los paisajes naturales. El sitio fue desarrollado con un enfoque visual limpio y responsive, utilizando HTML, CSS, JavaScript y Bootstrap.
