@@ -41,7 +41,6 @@ body>* {
     z-index: 1;
 }
 
-
 .footer-estilizado {
     background-color: #37553c;
     border-radius: 1rem;
@@ -314,61 +313,70 @@ h1.text-center {
     }
 }
 
-
 @media (min-width: 768px) {
-    .sidebar {
-        flex-wrap: nowrap !important;
-        align-items: center !important;
-        justify-content: flex-start !important;
-        text-align: center;
-        width: 260px;
-        min-width: 240px;
-        max-width: 280px;
-    }
+  .sidebar {
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    text-align: center;
+    width: 260px;
+    min-width: 240px;
+    max-width: 280px;
+    flex-shrink: 0;
+  }
 
-    .sidebar ul {
-        align-items: center !important;
-        text-align: center;
-        width: 100%;
-    }
+  .sidebar-inner {
+    position: sticky;
+    top: 1rem;
+    z-index: 10;
+    will-change: top;
+    backface-visibility: hidden;
+  }
 
-    .sidebar ul li {
-        width: 100%;
-    }
+  .sidebar ul {
+    align-items: center !important;
+    text-align: center;
+    width: 100%;
+  }
 
-    .sidebar ul li a {
-        display: block;
-        width: 100%;
-        font-size: 1.5rem;
-        padding: 0.75rem 1.25rem;
-    }
+  .sidebar ul li {
+    width: 100%;
+  }
 
-    .sidebar a img {
-        display: block;
-        margin: 0 auto;
-    }
+  .sidebar ul li a {
+    display: block;
+    width: 100%;
+    font-size: 1.5rem;
+    padding: 0.75rem 1.25rem;
+  }
 
-    .footer-estilizado .contacto p,
-    .footer-estilizado .contacto h5,
-    .footer-estilizado .redes h5 {
-        text-align: center !important;
-    }
+  .sidebar a img {
+    display: block;
+    margin: 0 auto;
+  }
 
-    #acerca-form-wrapper {
-        flex-direction: row;
-    }
+  .footer-estilizado .contacto p,
+  .footer-estilizado .contacto h5,
+  .footer-estilizado .redes h5 {
+    text-align: center !important;
+  }
 
-    #acerca,
-    #formulario {
-        width: 50%;
-    }
+  #acerca-form-wrapper {
+    flex-direction: row;
+  }
 
-    .sidebar-collapse {
-        max-height: none !important;
-        opacity: 1 !important;
-        overflow: visible !important;
-    }
+  #acerca,
+  #formulario {
+    width: 50%;
+  }
+
+  .sidebar-collapse {
+    max-height: none !important;
+    opacity: 1 !important;
+    overflow: visible !important;
+  }
 }
+
 
 @media (max-width: 576px) {
 
@@ -399,7 +407,6 @@ h1.text-center {
     will-change: transform, filter;
 }
 
-
 .bento-img:hover {
     filter: grayscale(0%);
     transform: scale(1.03);
@@ -407,7 +414,6 @@ h1.text-center {
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
 }
 
-/* Layout estilo bento */
 .img1 {
     grid-column: span 3;
     grid-row: span 2;
