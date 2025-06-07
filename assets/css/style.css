@@ -383,6 +383,8 @@ h1.text-center {
         padding: 0.2rem;
         box-sizing: border-box;
         transition: filter 0.4s ease, transform 0.3s ease;
+        filter: grayscale(0%) !important;
+
     }
 
     .sobre-mi-section-modern {
